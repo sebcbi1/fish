@@ -11,8 +11,8 @@ set __fish_git_prompt_color_branch yellow --bold
 set __fish_git_prompt_describe_style default
 
 set __fish_git_prompt_char_stashstate  ' ↩'
-set __fish_git_prompt_char_upstream_ahead "↑"
-set __fish_git_prompt_char_upstream_behind "↓"
+set __fish_git_prompt_char_upstream_ahead " ↑"
+set __fish_git_prompt_char_upstream_behind " ↓"
 set __fish_git_prompt_char_upstream_prefix ""
 
 set __fish_git_prompt_char_stagedstate " →"
