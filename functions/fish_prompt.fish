@@ -55,7 +55,7 @@ function fish_prompt --description 'Write out the prompt'
       end
 
     case '*'
-	    set delim \#
+	    set delim \$
 
   		if not set -q __fish_prompt_cwd
   			set -g __fish_prompt_cwd (set_color $fish_color_cwd)
