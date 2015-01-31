@@ -1,5 +1,7 @@
+set fish_greeting ""
 set fish_color_root red
 set fish_color_cwd white
+set fish_color_cwd_root white
 
 set __fish_git_prompt_show_informative_status 1
 set __fish_git_prompt_hide_untrackedfiles 1

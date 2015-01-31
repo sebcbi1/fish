@@ -36,25 +36,26 @@ function fish_prompt --description 'Write out the prompt'
 		end
 	end
 
-	set -l delim '>'
 
-	switch $USER
+    switch $USER
 
-  	case root
+    case root
+        set delim #
 
-  		if not set -q __fish_prompt_cwd
-  			if set -q fish_color_cwd_root
-  				set -g __fish_prompt_cwd (set_color $fish_color_cwd_root)
-  			else
-  				set -g __fish_prompt_cwd (set_color $fish_color_cwd)
-  			end
-  		end
+        if not set -q __fish_prompt_cwd
+            if set -q fish_color_cwd_root
+                set -g __fish_prompt_cwd (set_color $fish_color_cwd_root)
+            else
+                set -g __fish_prompt_cwd (set_color $fish_color_cwd)
+            end
+        end
 
       if set -q fish_color_root
-        set -g __fish_prompt_user (set_color $fish_color_root)
+        set -g __fish_prompt_user (set_color $fish_color_root --bold)
       end
 
-  	case '*'
+    case '*'
+	    set delim \$
 
   		if not set -q __fish_prompt_cwd
   			set -g __fish_prompt_cwd (set_color $fish_color_cwd)
@@ -67,7 +68,7 @@ function fish_prompt --description 'Write out the prompt'
   end
 
   if not set -q __fish_prompt_user
-    set -g __fish_prompt_user (set_color $fish_color_user)
+    set -g __fish_prompt_user (set_color $fish_color_user --bold)
   end
 
 
@@ -91,7 +92,7 @@ function fish_prompt --description 'Write out the prompt'
 
     # Check if long duration
     if test $time_sec -gt 3
-      echo  \nExecution time: $time_sec s.
+      echo  Execution time: $time_sec s.
     end
   end
   echo -n -s "$__fish_prompt_user" "$USER" "$__hostname""$__fish_prompt_normal" ':' "$__fish_prompt_cwd" (prompt_pwd) "$__fish_prompt_normal" (__fish_git_prompt) "$__fish_prompt_normal" ' ' "$delim" ' '
