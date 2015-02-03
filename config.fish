@@ -1,4 +1,6 @@
 set fish_greeting ""
+set fish_color_host cyan
+set fish_color_user green
 set fish_color_root red
 set fish_color_cwd white
 set fish_color_cwd_root white
